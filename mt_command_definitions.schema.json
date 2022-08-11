@@ -67,9 +67,10 @@
 						"range": {
 							"description": "An array of exactly two elements defining the field's valid numeric range, inclusive of the limits. (Ex: 0,1,2 are valid with a range of [0,2] )",
 							"type": "array",
-							"contains": {
-								"type": "integer"
-							},
+							"prefixItems": [
+								{ "type": "integer" },
+								{ "type": "integer" }
+							],
 							"minItems": 2,
 							"maxItems": 2,
 							"additionalItems": false
@@ -83,6 +84,7 @@
 							"type": "integer"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -133,9 +135,10 @@
 						"range": {
 							"description": "An array of exactly two elements defining the field's valid numeric range, inclusive of the limits. (Ex: 0,1,2 are valid with a range of [0,2] )",
 							"type": "array",
-							"contains": {
-								"type": "number"
-							},
+							"prefixItems": [
+								{ "type": "number" },
+								{ "type": "number" }
+							],
 							"minItems": 2,
 							"maxItems": 2,
 							"additionalItems": false
@@ -149,6 +152,7 @@
 							"type": "number"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -219,6 +223,7 @@
 							"type": "string"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -292,15 +297,16 @@
 						"range": {
 							"description": "An array of exactly two strings defining the labels to show. Defaults to [False, True]",
 							"type": "array",
-							"contains": {
-								"type": "string",
-								"minLength": 1
-							},
+							"prefixItems": [
+								{ "type": "string" },
+								{ "type": "string" }
+							],
 							"additionalItems": false,
 							"minItems": 2,
 							"maxItems": 2
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -365,6 +371,7 @@
 							"additionalProperties": false
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type",
