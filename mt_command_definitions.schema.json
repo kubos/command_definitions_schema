@@ -67,15 +67,12 @@
 						"range": {
 							"description": "An array of exactly two elements defining the field's valid numeric range, inclusive of the limits. (Ex: 0,1,2 are valid with a range of [0,2] )",
 							"type": "array",
-							"items": [
-								{
-									"type": "integer"
-								},
-								{
-									"type": "integer"
-								}
+							"prefixItems": [
+								{ "type": "integer" },
+								{ "type": "integer" }
 							],
 							"minItems": 2,
+							"maxItems": 2,
 							"additionalItems": false
 						},
 						"value": {
@@ -87,6 +84,7 @@
 							"type": "integer"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -137,15 +135,12 @@
 						"range": {
 							"description": "An array of exactly two elements defining the field's valid numeric range, inclusive of the limits. (Ex: 0,1,2 are valid with a range of [0,2] )",
 							"type": "array",
-							"items": [
-								{
-									"type": "number"
-								},
-								{
-									"type": "number"
-								}
+							"prefixItems": [
+								{ "type": "number" },
+								{ "type": "number" }
 							],
 							"minItems": 2,
+							"maxItems": 2,
 							"additionalItems": false
 						},
 						"value": {
@@ -157,6 +152,7 @@
 							"type": "number"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -208,7 +204,8 @@
 							"description": "An array of one or more elements to populate a select field of valid string values for the field",
 							"type": "array",
 							"items": {
-								"type": "string"
+								"type": "string",
+								"minLength": 1
 							},
 							"minItems": 1
 						},
@@ -226,6 +223,7 @@
 							"type": "string"
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -299,18 +297,16 @@
 						"range": {
 							"description": "An array of exactly two strings defining the labels to show. Defaults to [False, True]",
 							"type": "array",
-							"items": [
-								{
-									"type": "string"
-								},
-								{
-									"type": "string"
-								}
+							"prefixItems": [
+								{ "type": "string" },
+								{ "type": "string" }
 							],
 							"additionalItems": false,
-							"minItems": 2
+							"minItems": 2,
+							"maxItems": 2
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type"
@@ -375,6 +371,7 @@
 							"additionalProperties": false
 						}
 					},
+					"additionalProperties": false,
 					"required": [
 						"name",
 						"type",
