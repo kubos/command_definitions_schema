@@ -137,7 +137,7 @@
                             "description": "The default, placeholder, or starting value for a field that can be changed. Cannot be combined with `value`. May be `now` for datetime.",
                             "oneOf": [
                                 { "type": "integer" },
-                                { "const": "now" }
+                                { "enum": ["now"] }
                             ]
                         }
                     },
