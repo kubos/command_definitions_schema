@@ -127,6 +127,57 @@
 							"$ref": "#/$defs/fieldName"
 						},
 						"type": {
+							"const": "datetime"
+						},
+						"value": {
+							"description": "An optional constant value that the field must always take. Cannot be combined with `default`.",
+							"type": "integer",
+							"minimum": 0
+						},
+						"default": {
+							"description": "The default, placeholder, or starting value for a field that can be changed. Cannot be combined with `value`. May be `now` for datetime.",
+							"anyOf": [
+								{ "type": "integer", "minimum": 0 },
+								{ "type": "string", "enum": ["now"] }
+							]
+						}
+					},
+					"additionalProperties": false,
+					"required": ["name", "type"],
+					"anyOf": [
+						{
+							"required": "value",
+							"not": {
+								"required": ["default"]
+							}
+						},
+						{
+							"required": [
+								"default"
+							],
+							"not": {
+								"required": [
+									"value"
+								]
+							}
+						},
+						{
+							"required": [],
+							"not": {
+								"required": [
+									"default",
+									"value"
+								]
+							}
+						}
+					]
+				},
+				{
+					"properties": {
+						"name": {
+							"$ref": "#/$defs/fieldName"
+						},
+						"type": {
 							"enum": [
 								"number",
 								"float"
