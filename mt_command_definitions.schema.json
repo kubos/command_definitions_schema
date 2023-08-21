@@ -135,9 +135,9 @@
                         },
                         "default": {
                             "description": "The default, placeholder, or starting value for a field that can be changed. Cannot be combined with `value`. May be `now` for datetime.",
-                            "oneOf": [
+                            "anyOf": [
                                 { "type": "integer" },
-                                { "enum": ["now"] }
+                                { "type": "string", "enum": ["now"] }
                             ]
                         }
                     },
