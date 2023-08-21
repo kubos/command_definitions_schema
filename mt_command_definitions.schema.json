@@ -135,7 +135,7 @@
                         },
                         "default": {
                             "description":  "The default, placeholder, or starting value for a field that can be changed. Cannot be combined with `value`. May be `now` for datetime.",
-                            "type": ["integer", { "const": "now" }]
+                            "type": ["integer", { "enum": ["now"] }]
                         }
                     },
                     "additionalProperties": false,
